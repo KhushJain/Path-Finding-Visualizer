@@ -1,6 +1,6 @@
 import { getUnvisitedNeighbors } from "./helperFunctions.js";
 
-export function bfs(grid, startNode, finishNode) {
+export const bfs = (grid, startNode, finishNode) => {
   const unvisited = [];
   const visitedNodesInOrder = [];
   startNode.isVisted = true;

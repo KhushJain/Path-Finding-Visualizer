@@ -1,6 +1,6 @@
 import { getUnvisitedNeighbors } from "./helperFunctions.js";
 
-export function dfs(grid, startNode, finishNode) {
+export const dfs = (grid, startNode, finishNode) => {
   const unvisited = [];
   const visitedNodesInOrder = [];
   startNode.isVisted = true;
@@ -8,16 +8,22 @@ export function dfs(grid, startNode, finishNode) {
   unvisited.push(startNode);
   visitedNodesInOrder.push(startNode);
   while (unvisited.length !== 0) {
-    let currentNode = unvisited.shift();
-    if (currentNode === finishNode) {
-      return visitedNodesInOrder;
-    }
+    //console.log(unvisited);
+    let currentNode = unvisited.pop();
+    if (currentNode === finishNode) return visitedNodesInOrder;
+    currentNode.isVisited = true;
+    visitedNodesInOrder.push(currentNode);
     let neighbors = getUnvisitedNeighbors(currentNode, grid);
+
+    // Random neighbor selection
+    /*let n = neighbors.length;
+    for (let i = 0; i < n; i++) {
+      let remove = Math.floor(Math.random() * neighbors.length);
+      let neighbor = neighbors.splice(remove, 1)[0];*/
+
     for (const neighbor of neighbors) {
-      neighbor.isVisited = true;
       neighbor.previousNode = currentNode;
       unvisited.push(neighbor);
-      visitedNodesInOrder.push(neighbor);
     }
   }
   return visitedNodesInOrder;
