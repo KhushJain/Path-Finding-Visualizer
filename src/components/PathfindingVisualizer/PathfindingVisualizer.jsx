@@ -99,8 +99,8 @@ export default class PathfindingVisualizer extends Component {
 
   unvisitNodes(removeWalls) {
     const { grid } = this.state;
-    for (let row = 0; row < 20; row++) {
-      for (let col = 0; col < 50; col++) {
+    for (let row = 0; row < 19; row++) {
+      for (let col = 0; col < 49; col++) {
         let node = grid[row][col];
         document.getElementById(`node-${node.row}-${node.col}`).className =
           "node ";
@@ -170,9 +170,9 @@ export default class PathfindingVisualizer extends Component {
 
 const getInitialGrid = () => {
   const grid = [];
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < 19; row++) {
     const currentRow = [];
-    for (let col = 0; col < 50; col++) {
+    for (let col = 0; col < 49; col++) {
       currentRow.push(createNode(col, row));
     }
     grid.push(currentRow);
