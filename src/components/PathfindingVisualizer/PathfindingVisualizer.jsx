@@ -136,6 +136,29 @@ export default class PathfindingVisualizer extends Component {
     return (
       <>
         <Header visualize={this.visualize} isVisualizing={this.state.isVisualizing} clearBoard={this.clearBoard}/>
+        <div className="main" style={{ display: 'block', boxSizing: 'border-box', textAlign: 'center', marginTop: '30px' }}>
+          <ul className="cellunordered">
+            <li className="celllist">
+              <div className="cell cell-start"></div>Starting Node
+            </li>
+            <li className="celllist">
+              <div className="cell cell-finish"></div>Target Node
+            </li>
+            <li className="celllist">
+              <div className="cell" style={{ backgroundColor: 'white', border: '1px solid rgb(175, 216, 248)' }}></div>Unvisited Node
+            </li>
+            <li className="celllist">
+              <div className="cell" style={{ backgroundColor: 'rgba(0, 217, 159, 0.75)' }}></div>
+              <div className="cell" style={{ backgroundColor: 'rgba(0, 190, 218, 0.75)' }}></div>Visited Nodes
+            </li>
+            <li className="celllist">
+              <div className="cell" style={{ backgroundColor: 'rgb(12, 53, 71)' }}></div>Wall Node
+            </li>
+            <li className="celllist">
+              <div className="cell" style={{ backgroundColor: 'rgb(255, 254, 106)' }}></div>Shortest-Path Node
+            </li>
+          </ul>
+        </div>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (

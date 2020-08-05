@@ -20,7 +20,7 @@ class Header extends Component {
                   onClick={() => this.props.visualize('dfs')} disabled={this.props.isVisualizing} href="">Depth First Search</Nav.Link>
               </Nav>
               <Nav>
-                <Nav.Link onClick={() => this.props.clearBoard()} disabled={this.props.isVisualizing} href="">Clear Board</Nav.Link>
+                <Nav.Link onClick={() => this.props.clearBoard()} disabled={this.props.isVisualizing} href="">Clear Board <i className="fa fa-eraser" aria-hidden="true"></i></Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
